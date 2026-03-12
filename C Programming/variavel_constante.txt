@@ -1,0 +1,62 @@
+Variável = é um identificador que permite acessar uma determinada região de memória no computador.
+
+    1. Tipos de Variáveis
+
+        - Inteiro - Inteiro
+        - Real - float ou double
+        - Caractere - char
+
+    2. Declaração de Variáveis
+
+        - template padrão: <tipo> <nome>;
+        - template para +1 variável: <tipo> <nome1>, <nome2>, ...;
+
+        Ex.: int variavelInteira;
+
+    3. Regras de nomenclatura
+
+        - devem conter apenas letras (sem acentos), números e sublinhados( _ );
+        - NÃO pode começar com número;
+        - NÃO pode ser igual a alguma palavra reservada (palavras com significado dentro da linguagem C).
+        
+        - Exemplos corretos:
+            int neps;
+            char _NepsAcademy, caractere789;
+
+----------------------------------------------------------------------------------------
+
+Constantes = referem-se a regiões da memória, a diferença é que admitem apenas um valor durante todo o programa e deve ser obrigatoriamente especificado no momento da declaração.
+
+    1. Declaração de Constantes
+
+        - const <tipo> <nome> = <valor>;
+        - <tipo> const <nome> = <valor>;
+
+        Ex.: 
+            const int nome_da_constante = valorInteiro;
+            int const nome_da_constante_1 = valorInteiro_1, nome_da_constante_2 = valorInteiro_2;
+
+----------------------------------------------------------------------------------------
+
+Impressão de um valor
+
+---------------------------
+|  Tipo  |  Especificador  |
+---------------------------
+|  int   |     %d ou %i    | 
+|  float |        %f       |  
+|  char  |        %c       |
+---------------------------
+
+Exemplo:
+
+    Input
+
+        int nota;
+        nota = 10;
+        printf("O Neps Academy é nota %d!\n", nota);
+
+    Output: O Neps Academy é nota 10!
+
+printf("Fim do conteúdo!")
+----------------------------------------------------------------------------------------
