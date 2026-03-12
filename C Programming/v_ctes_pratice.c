@@ -15,10 +15,10 @@
 
 // Constantes
 
-int main(){
+/* int main(){
     const int x = 123;
     printf("%d\n", x);
 
-    x = 466; // Erro: não é possível modificar o valor de uma constante
+   // x = 466; // Erro: não é possível modificar o valor de uma constante
     printf("%d\n", x);
-}
+}*/
