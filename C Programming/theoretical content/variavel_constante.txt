@@ -43,7 +43,7 @@ Impressão de um valor
 ---------------------------
 |  Tipo  |  Especificador  |
 ---------------------------
-|  int   |     %d ou %i    | 
+|  int   |     %d ou %i    | %d para decimais e %i para diferentes bases(10, 8 ou 16).
 |  float |        %f       |  
 |  char  |        %c       |
 ---------------------------

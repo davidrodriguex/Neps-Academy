@@ -1,0 +1,32 @@
+---------------------------------------------
+            LEITURA DE VARIÁVEIS
+---------------------------------------------
+
+=--- Leitura de Dados ---=
+
+    Possibilita o armazenamento de informações digitas pelo usuário, sem a leitura de dados o programa seria estágio, imagine uma calculadora sem leitura de dados.
+    
+    -- Comando scanf() --
+
+        scanf (scan + f = ler + função)
+        possibilita a solicitação de valores para o usuário e atribui para uma variável.
+
+        scanf(<formatação>, <posições de memória>);
+
+    -- Operador & --
+
+        scanf informa a posição de memória para guardar a informação.
+        &scanf = especifica que queremos que o computador armazene a informação na mesma posição de memória que ela está ocupando.
+
+    Exemplo 1:
+
+        int a, b;
+        scanf("Digite um número: %d", &a);
+        prinf("O valor da variável a = %d\n", a);
+
+    Exemplo 2 - leitura de mais de um valor e atribuição dos mesmos:
+
+        scanf("Digite dois números: %d%d", &a,%b); 
+        printf("Valor de a = %d\nValor de b = %d\n",a,b);
+
+        A ordem dos valores está diretamente relacionada a ordem das variáveis após a vírgula.
