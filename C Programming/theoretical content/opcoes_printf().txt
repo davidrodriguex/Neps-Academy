@@ -1,0 +1,10 @@
+-------------------------------
+    -  OPÇÕES DE PRINTF() -  
+-------------------------------
+
+1. Caracteres Especiais
+
+    -> Quebra de linha (\n);
+    -> Tabulação (\t) - insere um espaço como se tivesse clicado em tab;
+    -> Barra invertida (\\) e porcentagem (%%) - são símbolos com significância dentro da linguagem, para serem impressos é preciso duplicá-los.
+

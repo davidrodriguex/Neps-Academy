@@ -1,0 +1,23 @@
+-------------------------------
+  -  OPERADORES ARITMÉTICOS -  
+-------------------------------
+
+-- Operadores --
+
+-------------------------------
+|    Operação    | Operadores | 
+-------------------------------
+|  Soma          |     +      |    
+|  Subtração     |     -      |
+|  Multiplicação |     *      | 
+|  Divisão       |     /      |
+|  Resto         |     %      |
+-------------------------------
+
+-- Ordem de Precedência --
+
+    -> 1. Multiplicação, Divisão e Resto;
+    -> 2. Soma e Subtração.
+
+    Se houver entre parenteses, a prioridade será o que estiver dentro dele.
+    Assim como na matemática, para desempate, a ordem vem da esqueda para direita.
