@@ -8,3 +8,64 @@
     -> Tabulação (\t) - insere um espaço como se tivesse clicado em tab;
     -> Barra invertida (\\) e porcentagem (%%) - são símbolos com significância dentro da linguagem, para serem impressos é preciso duplicá-los.
 
+2. Alinhamento
+
+    Determina quantos espaços devem ser impressos à direita ou à esquerda.
+    Considere x e y como números inteiros:
+
+        Inputs
+
+            printf("[%xd]")
+
+            printf("[%5d]")
+
+        Output: 
+
+                [  123]
+
+    Ao solicitar 5 espaços, será levado em consideração os espaços que os números já ocupam.
+    Caso o espaço requisitado será menor que o nº de dígitos do valor a ser impresso, o alinhamento será ignorado.
+
+3. Preenchimento com 0's
+
+    Similar ao tópico de Alinhamento, basta inserir o 0 na frente do número de espaços solicitados.
+
+        Input
+        int num = 123
+            printf("%09d", num);
+
+        Output
+            000000123
+
+    Foi inserido seis zeros relativo ao espaço remanescente.
+
+4. Definição de Precisão de um nº relativo
+
+    Template: printf("%.[x]f");
+
+    Significa que um determinado float deve ser impresso com uma quantidade 'x' de casas decimais.
+
+    Inputs
+
+        float real = 123.56789;
+
+        printf("%f\n", real);
+        printf("%1f\n", real);
+        printf("%2f\n", real);
+        printf("%3f\n", real);
+
+    Outputs
+
+        123.56789
+        123.5
+        123.56
+        123.567
+
+    Na prática, existe uma aproximação baseado na matemática.
+
+5. Impressão de Octais e Hexadecimais
+
+    -> Base Octal: utiliza-se o %o ao invés de %d, printf("%o", 9) -- 11
+    -> Base Hexadecimal: utiliza-se o operador %x, printf("%x", 27) -- 1B
+
+        Utilizar o 'x' maiúsculo ou maiúsculo apenas difere no output das letras.
