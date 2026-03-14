@@ -1,0 +1,116 @@
+---------------------------------------------
+            ESTRUTURAS DE DECISÃO
+---------------------------------------------
+
+=-- Operadores Relacionais --=
+
+    Usado para compara dois valores e verificar se a relacção entre eles é verdadeira ou falsa.
+
+    ----------------------------------
+    |   Significado     | Operadores | 
+    ----------------------------------
+    |    Maior que      |     >      | 
+    |    Menor que      |     <      |    
+    |    Menor ou igual |     <=     | 
+    |    Maior ou igual |     >=     |
+    |    Igual          |     ==     |
+    |    Diferente de   |     !=     |
+    ----------------------------------
+
+    A saída na impressão é em número binário referente ao seu valor lógico. (0 ou 1).
+
+=-- Estrutura de Decisão Se --=
+
+    Os operadores lógicos são utilizados da partir daqui, para criar uma estrutura de decisão com base na veracidade de uma afirmação lógica (uma condição).
+
+    if ( condição ){
+        Bloco de código
+    }
+    
+    Ex.: 
+
+        if( 1 < 2 ){
+            printf("1 menor que 2\n");
+        } 
+    
+        Output: 1 menor que 2.
+
+=-- Operadores Lógicos --=
+
+    1. Operador E (&&)
+
+        Imagine as condições de descobrir se um número é par E positivo:
+            Par: x % 2 == 0
+            Positivo: x > 0
+        
+        Duas formas de execução: 
+
+            --> Aninhamento de if's:
+
+                    if(x % 2 == 0){
+                        if(x > 0){
+                            Bloco de código
+                        }
+                    }
+            
+            --> Apenas um if:
+
+                    if(x % 2 == 0 && x > 0){
+                        Bloco de código
+                    }
+
+    2. Operador OU (||)
+
+        Imagine agora as condições para descobrir se o número é par OU positivo:
+
+        Duas formas de execução:
+
+            --> Dois if's:
+
+                    if(x % 2 == 0){
+                        bloco de código
+                    }
+            
+            --> Apenas um if:
+
+                    if(x % 2 == 0 || x > 0){`
+                        bloco de código                    
+                    }
+    
+    3. Operador de Negação (!)
+
+        Esse operador é utilizado para perguntar se uma condição é falsa em vez de verdadeira, ou seja, inverte o valor lógico da afirmação.
+
+        if(! condição){
+
+        }
+
+    4. Ordem de Precedência
+
+        Operações onde vários operadores lógicos são utilizados: && tem precedência sobre o ||.
+        Se houver a utilização de parênteses, a precedência fica com o mesmo.
+
+=-- Estrututa if-else --=
+
+    if(condição){
+        bloco se condição verdadeira
+    }
+    else{
+        bloco se condição falsa
+    }
+
+=-- Estrutura if-else-if --=
+
+    if(condição 1){
+        Bloco se condição 1 verdadeira
+    }
+
+    else if(condição 2){
+        Bloco se condição 1 falsa e condição 2 verdadeira
+    }
+
+    else{
+        Bloco se condição 2 falsa
+    }
+
+    Pode utilizar múltiplos else if's, terminando com um else no final de tudo.
