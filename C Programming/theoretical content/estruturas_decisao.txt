@@ -114,3 +114,28 @@
     }
 
     Pode utilizar múltiplos else if's, terminando com um else no final de tudo.
+
+=-- Estrutura Switch --=
+
+    Essa estrutura permite testar uma variável contra múltiplos valores específicos, de forma organizada.
+    Template:
+
+        switch( variavel ){
+            case valor1:
+                // comandos
+                break;
+            case valor2:
+                // comandos
+                break;
+            default:
+                // comandos
+        }
+
+    Imagine que faça um programa que leia um inteiro representando o identificador de cada item e imprima o correspondente ao número. Isso pode ser feito com múltiplos if's ou if-else-if.
+
+    switch (variavel): indica qual variável será testada;
+    case valor: verifica se a variável é igual ao valor;
+    break: encerra a execução do switch caso seja o valor correspondente;
+    default: é opcional e executa um bloco caso nenhum valor corresponda.
+
+    Sem o break, todos os valores seriam testados e poderia ter dois blocos de códigos sendo executados: o do valor e o default.
