@@ -1,0 +1,104 @@
+------------------------------------
+------------------------------------
+----- ESTRUTURAS DE REPETIÇÃO ------
+------------------------------------
+------------------------------------
+
+--> Estrutura While
+
+      Também chamada de loop e repete um certo trecho de código enquanto uma condição imposta no início seja verdadeira.
+
+        while(condição){
+            // Código
+        }
+
+        A condição é testada e caso seja falta o while não é executado, caso seja verdadeira, o bloco de código é executado e a condição é testada novamente e assim segue o loop até que a condição seja falsa.
+
+        Dentro do bloco de código é necessário de um controlador: i = i + 1, para que em algum momento a condição seja falta, ou vai gerar um loop infinito.
+
+        i = 1 // Inicialização
+        while (i <= 5) { // Condição
+            printf(i)
+            i = i + 1 // Incremento
+        }
+
+--> Estrutura For
+
+      Semelhante ao While, a diferença é que pode incluir um comando que será executado antes da condição e um comando que será executado ao fim de cada repetição.
+
+        for(inicialização; condição; incremento){
+            // Código
+        }
+
+        int n;
+        int i;
+        scanf("%d", &n);
+
+        for(i = 1; i <= n; i = i + 1){
+            printf("Neps\n");
+        }
+
+        Uma forma de resumir o while. Mais uma resumida é no incremento:
+
+        i = i + 1 --> i++
+        i = i - 1 --> i--
+    
+--> While ou For, qual usar?
+
+      While -> quando não sabemos o nº exato de repetições, a execução depende de uma condição lógica que pode variar conforme o comportamento do programa ou entrada do usuário, como ler dados até que o usuário digite um valor específico; - Situações dinâmicas, o término do loop depende de uma condição externa.
+
+      For -> quando sabemos previamente quantas vezes o código será executado. nº definido de repetições; - Repetições controladas e previsíveis.
+
+--> Estrutura doWhile
+
+      A condição de vetificação acontece após a execução do bloco de código, ou seja, o código é executado ao menos uma vez, independente da condição.
+
+      Exemplo de pedido de uma entrada do usuário e só depois verificar se o valor digitado é válido.
+
+      do{
+        // Código
+      } while(condição);
+
+--> While ou doWhile?
+
+      While -> quando não pode haver necessidade de executar o código se a condição for falsa logo no início; - ler nºs enquanto o usuário quiser continuar.
+
+      doWhile -> quando precisa executar o código ao menos uma vez, antes de verificar a condição; - exibir um menu de op. e depois perguntar se o usuário deseja continuar.
+
+--> Break e Continue
+
+      Controle de fluxo das estruturas de repetição. Utilizados quando queremos pular uma parte do código ou encerrar um loop antes do previsto.
+
+      Mais dinamicidade e eficiência.
+
+      -> Continue
+
+          Utilizado para pular o restante do código dentro do loop e ir direto para a próxima iteração. (para o próximo ciclo de repetição)
+
+          O programa ignora todas as instruções que estão abaixo dele no bloco atual e retorna ao início do loop.
+
+          int i;
+          for(int i = 0; i < 6; i++){
+            if(i == 2){
+                continue;
+            }
+            printf("%d\n", i);
+          }
+
+          Os nºs de 0 a 5 são impressos na tela, exceto o 2 que o continue obriga o printf a pular.
+
+        -> Break
+
+           Interrompe completamente um laço de repetição antes que sua condição se torne falsa.
+
+           Útil em parar um loop ao atingir uma condição específica, sem precisar precorrer todas as repetições.
+
+           int i;
+           for(int i = 0; i < 6; i++){
+            if(i == 2){
+                break;
+            }
+            printf("%d\n", i);
+          }
+
+          Só serão impressos na tela os nºs 0 e 1.
