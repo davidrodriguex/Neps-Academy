@@ -1,0 +1,32 @@
+---= Modularização e Ponteiros =---
+
+1. Modularização
+
+    Significa dividir o programa em módulos para que cada módulo execute uma tarefa específica.
+    Até agora tudo foi executado em um único módulo, a função 'main', ou função principal.
+
+    Isso fragmenta o programa em partes pequenas para realizar as tarefaz uma de cada vez:
+
+      - Facilita o debug;
+      - Melhora a legibilidade;
+      - Elimina redundâncias.
+
+    -> Função: é como um programa é modularizado, dividindo-o em várias funções que recebe determinados parâmetros, realiza o procedimento deles e retornar algum valor. (f(x) = 2x)
+
+    -> Especificações para Funções em C
+
+        - Tipo de retorno; (void = não retorna nada)
+        - Nome da função;
+        - Parâmetros; (tipos identificados e se +1, separados por vírgulas)
+        - Código.
+
+        <tipo de retorno> <nome> (parâmetro){
+            <código>
+        }
+
+        void imprime(){ // parâmetro vazio e nome "imprime"
+            printf("Neps Academy\n");
+        } 
+        int main(){
+            imprime(); // pode ser chamado +1 vez.
+        }
