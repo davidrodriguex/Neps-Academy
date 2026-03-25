@@ -11,7 +11,7 @@
       - Melhora a legibilidade;
       - Elimina redundâncias.
 
-    -> Função: é como um programa é modularizado, dividindo-o em várias funções que recebe determinados parâmetros, realiza o procedimento deles e retornar algum valor. (f(x) = 2x)
+ --> Função: é como um programa é modularizado, dividindo-o em várias funções que recebe determinados parâmetros, realiza o procedimento deles e retornar algum valor. (f(x) = 2x)
 
     -> Especificações para Funções em C
 
@@ -30,3 +30,16 @@
         int main(){
             imprime(); // pode ser chamado +1 vez.
         }
+
+    -> Tipos de Funções
+
+        Int - retorna valores inteiros como de cálculos de soma com inteiros;
+        FLoat - retorna valores reais como de cálculos de médias aritméticas;
+        Void - não retorna valores, é usado para exibir mensagens e menus, que não precisa de parâmetros.
+               como não tem resultado a ser armazenado, não é utilizado nenhum return.
+
+        2.0 x 2 - com ponto flutuante é utilizado em funções do tipo float senão toda a expressão é considerada como inteira e pode apresentar erros, mas é possível realizar um type casting e converter explicitamente um valor para outro tipo.
+
+           ex.: (a + b)/2 considere que a e b são do tipo float, então deveria utilizar 2.0
+                convertendo: return (float)(a + b)/2
+                
