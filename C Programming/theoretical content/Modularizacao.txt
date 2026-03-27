@@ -57,3 +57,73 @@
         p + 1 -> ñ significa 1B a mais e sim próximo int na memória.
 
         Se um int ocupa 4B, então p + 1 aponta para um endereço 4B à frente de p.
+    
+    Tamanho de tipos: C possui um operador unário que retorna o tamanho em bytes de algo, como a quantidade de memória ocupada por um dado específico. 
+    
+        sizeof;
+
+        sizeof(int) = 4
+        sizeof(float) = 4
+        sizeof(double) = 8
+        sizeof(char) = 1 
+
+        Os valores indicam que, por exemplo, o inteiro ocupa 4B de memória ao ser armazenado, se adicionar 1 ao ponteiro, então o novo endereço de memória apontado por ele estará 4B à frente do antigo.
+
+    Alterando o valor do ponteiro: aqui é atribuído um endereço de memória à um ponteiro, assim como é atribuido valores ára variáveis comuns.
+
+        Operador &; - descobrir o endereço de um var na memória e atribuí-lo aoa ponteiro.
+
+        int x = 5;
+        int *p = &x; - cria o ponteiro int p e atribui o endereço de x a ela;
+        int y = 9;
+        p = &y; agora p aponta para y.
+
+    Acessando o conteúdo apontado por um ponteiro: usando o printf()
+
+        int x = 5;
+        int *p = &x;
+        printf("%d\n", p);
+
+        Saída: 6422296. 
+        
+        Esse valor de saída é referente ao endereço de memória a qual está localizado a variável x. Esse valor é unitário e diferente para cada pc e máquina que rodar o mesmo código.
+
+        para saber o valor da variável x pelo ponteiro: 
+
+            printf("%d\n", *p);
+
+        É acessado indiretamente a variável x.
+
+    Outras possibilidades:
+
+        - Atribuir um endereço de um ponteiro a outro;
+        - Atribuir o valor da variável apontada por um ponteiro a outra variável.
+
+           int var = 123;
+           int *ponteiro = &var;
+           printf("%d\n", *ponteiro);
+           *ponteiro = 789;
+           printf("%d\n", var);
+
+        Saída: 123 / 789.
+
+        - operação aritmética:
+
+           printf("Tamanho de um inteiro: %d\n\n", sizeof(int));
+
+           int x = 1;
+           int *p = &x;
+
+           printf("p aponta para %d\n", p);
+           printf("p+1 aponta para %d\n", p+1);
+           printf("p+2 aponta para %d\n", p+2);
+
+           Saída:
+
+              Tamanho de um inteiro: 4
+
+              p aponta para 6422296
+              p+1 aponta para 6422300
+              p+2 aponta para 6422304
+
+            Ao adcionar uma unidade ao endereço armazenado, o descolacamento da posição da memória foi exatamente de 4B, nas duas vezes.
