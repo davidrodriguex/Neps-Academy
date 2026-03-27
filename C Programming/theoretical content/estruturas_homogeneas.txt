@@ -61,3 +61,32 @@
 
             Estamos pegando o endereço do elemento, visto que o nome do vetor é um ponteiro para sua primeira posição.
 
+2. Matrizes
+
+    Estrutura de dados que organiza elementos em duas dimensões, uma coleção de vetores, onde cada vetor é uma linha de sua tabela. Ela tem um conjunto de vetores que podem ser acessados pelo índice.
+
+        Template: <tipo> <nome>[<vetores/numlinhas>][<tamanho/numcolunas>];
+                  int matriz[3][3]; -- armazena nove elementos.
+
+        Representação na memória:
+
+            O PC não guarda tabela e sim sequência contínua de posições na memória.
+
+            matriz[0] -  x   x+1   x+2
+            matriz[1] - x+3  x+4   x+5
+            matriz[2] - x+6  x+7   x+8
+
+            O compilador entende que a cada três posições começa uma nova linha.
+
+        Aritmética de ponteiros:
+
+            O nome da matriz é tratado como um ponteiro para o primeiro vetor armazenado por ela, e o vetor aponta para o primeiro elemento de um cj. sequencial de elementos.
+            Consequentemente, precisaremos utilizar dois * para acessar determinado elemento: um irá fornecer o vetor e o outro, o elemento.
+
+            int m[2][3];
+
+            *m -> acessa o primeiro vetor, ou seja, armazena um ponteiro para a primeira posição do primeiro vetor;
+            **m -> acessa o primeiro elemento do primeiro vetor;
+            *(*m+1) -> acesso o segundo elemento do primeiro vetor;
+            m[1] + 1 -> acessa o segundo elemento do segundo vetor;
+            *(*(m + 1) + 2) -> acessa o terceiro elemento do segundo vetor.
