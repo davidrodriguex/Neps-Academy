@@ -1,0 +1,63 @@
+-----------------------------------------
+| ==> Estrutura de Dados Homogêneas <== |
+-----------------------------------------
+
+1. Vetores
+
+    Estrutura de dados que armazena uma coleção de elementos do mesmo tipo em posições consecutivas de memória. É como se fosse uma caixa com várias divisórias numeradas e cada divisória guarda um valor, os valores podem ser acessados por meio de sua posição (índice).
+
+        Serve para armazenar e organizar uma quantidade conhecida de dados do mesmo tipo, ao invés de declarar inúmeras variáveis individuais, difine apenas um vetor.
+
+        Template: <tipo> <nome>[<tamanho>]; -- int vetor[3];
+
+        É possível utilizar-se do comando sizeof para saber o nº de bytes de um vetor e para saber quantos elementos tem um vetor é só dividir o tamanho em bytes do vetor pelo tamanho em bytes do tipo do vetor
+
+        int v[5];
+
+        printf("Tamanho de um inteiro: %d\n", sizeof(int));
+        printf("Tamanho do vetor: %d\n", sizeof(v));
+        printf("Quantidade de elementos do vetor: %d\n", sizeof(v)/sizeof(int));
+        
+    Acessando os elementos do vetor:
+
+        Ponteiro    ||  *x      *(x+1)      *(x+2)      *(x+3) 
+      -----------------------------------------------------------
+        Operador [] ||  x[0]     x[1]        x[2]        x[3]  
+
+    Atribuição de valores aos elementos:
+
+        I. Alterando todos os elementos:
+
+            Único método que pode ser utilizado junto com a declaração.
+            int v[3] = {1, 2, 3};
+
+                v[0] = 1
+                v[1] = 2
+                v[2] = 3
+
+            O tamanho pode ser omitido nesse caso:
+            int v[] = {1, 2, 3}; -- v possui 3 elementos.
+
+            Se a quantidade de elementos dentro das chaves for menor que a quantidade de elementos definida no vetor, então as posições ao final do vetor serão preenchidas com o valor zero (no caso de numéricos).
+
+        II. Alterando apenas um elemento:
+
+            int v[3];
+            v[0] = 7;
+
+    Leitura dos elementos de um vetor:
+
+        I. Usando & e []:
+        
+            int v[7];
+            scanf("%d", &[3]); 
+
+            A utilização do & é necessária porque não estamos acessando o endereço e sim o elemento de fato.
+
+        II. Aritmética de ponteiros:
+
+            int v[7];
+            scanf("%d", v + 2);
+
+            Estamos pegando o endereço do elemento, visto que o nome do vetor é um ponteiro para sua primeira posição.
+
