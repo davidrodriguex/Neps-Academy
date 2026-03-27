@@ -47,9 +47,9 @@
 
     Variável especial que armazena o endereço de outra variável na memória. Ao invés de armazenar o valor atribuido, ele armazena o endereço de memória onde esse valor está guardado.
 
-    Imagine uma rua cheia de casas numeradas onde cada variável fica armazenada dentro das casas (endereços), o ponteiro funciona como um mapa que mostra em qual casa está guardada a informação que necessitamos acessar.
+        Imagine uma rua cheia de casas numeradas onde cada variável fica armazenada dentro das casas (endereços), o ponteiro funciona como um mapa que mostra em qual casa está guardada a informação que necessitamos acessar.
 
-    Template de um ponteiro: <tipo> *<nome>;
+        Template de um ponteiro: <tipo> *<nome>;
 
     Aritmética: soma/subtração de valores de um ponteiro, o endereço ao qual ele aponta será alterado. Se somar 1 a um ponteiro que aponta para um int, então ele passará a apontar para a próxima região de memória.
 
@@ -127,3 +127,90 @@
               p+2 aponta para 6422304
 
             Ao adcionar uma unidade ao endereço armazenado, o descolacamento da posição da memória foi exatamente de 4B, nas duas vezes.
+
+3. Passagem de Parâmetros
+
+    Ao chamar uma função, pode ser enviado valores ou variáveis para ela, o que são chamados de parâmetros. A forma como é passado que dita o que a função pode ou não alterar no programa. Há duas formas:
+
+        I. Passagem por valor;
+        II. Passagem por referência (usando Ponteiros).
+    
+    I. Passagem por valor (método padrão)
+
+        É enviado apenas uma cópia do valor da variável original, ou seja, qualquer alteração feita nessa cópia não afeta a variável original.  
+        
+        As variáveis utilizadas nas funções são de escopo local.
+
+        int troca(int a, int b){
+            int aux =  a;
+            a = b;
+            b = aux;
+            printf("Troca -> %d %d\n", a, b);
+        }
+
+        int main(){
+            int a = 1;
+            int b = 2;
+            printf("Main -> %d %d\n", a, b);
+            troca(a, b);
+            printf("Main -> %d %d", a, b);
+        }
+
+        Saída: 1 2 / 2 1 / 1 2
+    
+    II. Passagem por Referência 
+
+        O valor enviado é o endereço de memória onde o valor da variável está guardado, assim a função passa a acessar diretamente a variável original, podendo ser modificada de forma permanente.
+
+        int troca(int *a, int *b){
+            int aux = *a;
+            *a = *b;
+            *b = aux;
+            printf("Troca -> %d %d\n", *a,*b);
+        }
+        int main(){
+            int a = 1;
+            int b = 2;
+            printf("Main -> %d %d\n", a, b);
+
+            troca(&a, &b);
+
+            printf("Main -> %d %d", a, b);
+        }
+
+        Saída: 1 2 / 2 1 / 2 1
+
+        Passar o endereço das variáveis na chamada da função tem o mesmo efeito que criar um ponteiro para cada e usá-los como parâmetros na chamada.
+
+4. Recursividade
+
+    Ocorre quando uma função chama a si mesma durante sua execução. Serve para problemas de natureza repetitiva ou hierárquica.
+
+    Códigos recursivos são menores e mais fáceis de entender, ou seja, reduz a complexidade do código e facilita o raciocínio para problemas de natureza recursiva.
+
+    Função Recursiva: precisa definir o caso base (onde a resposta é conhecida ou a função continua se chamando eternamente, causando falha no uso crescente da memória, stack overflow) e a chamada recursiva (reduz o problema e aproxima a chamada do caso base).
+
+        O papel do caso base é impedir que a função se chame infinitamente.
+
+        int f(int x){
+            if(x == 0){
+                return 1;
+            } else{
+                return x * f(x-1);
+            }
+        }
+        int main(){
+            int N;
+            scanf("%d", &N);
+            printf("Resultado: %d", f(N));
+        }
+
+        Entendimento do código: 
+
+        f(5) = 5 * f(4) --> 5 * 24 = 120
+        f(4) = 4 * f(3) --> 4 * 6 = 24
+        f(3) = 3 * f(2) --> 3 * 2 = 6
+        f(2) = 2 * f(1) --> 2 * 1 = 2
+        f(1) = 1 * f(0) --> 1 * 1 = 1
+
+        Saída: Resultado: 120
