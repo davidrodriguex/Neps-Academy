@@ -72,9 +72,19 @@
 
             O PC não guarda tabela e sim sequência contínua de posições na memória.
 
-            matriz[0] -  x   x+1   x+2
-            matriz[1] - x+3  x+4   x+5
-            matriz[2] - x+6  x+7   x+8
+               --------------------------------------------------- 
+               |  matriz[0]   |    matriz[1]    |   matriz[2]    |
+               |-------------------------------------------------|  
+               | x  x+1  x+2  |  x+3  x+4  x+5  |  x+6  x+7  x+8 |
+               ---------------------------------------------------
+         [i][j]  00  01   02     10   11   12      20    21   22
+
+            Representação didática:
+
+                            [j]
+            [i] matriz[0] -  x   x+1   x+2
+                matriz[1] - x+3  x+4   x+5
+                matriz[2] - x+6  x+7   x+8
 
             O compilador entende que a cada três posições começa uma nova linha.
 
@@ -86,7 +96,41 @@
             int m[2][3];
 
             *m -> acessa o primeiro vetor, ou seja, armazena um ponteiro para a primeira posição do primeiro vetor;
-            **m -> acessa o primeiro elemento do primeiro vetor;
-            *(*m+1) -> acesso o segundo elemento do primeiro vetor;
-            m[1] + 1 -> acessa o segundo elemento do segundo vetor;
-            *(*(m + 1) + 2) -> acessa o terceiro elemento do segundo vetor.
+            **m -> acessa o primeiro elemento do primeiro vetor; = m[0][0]
+            *(*m+1) -> acesso o segundo elemento do primeiro vetor; = m[0][1]
+            *(m[1] + 1) -> acessa o segundo elemento do segundo vetor; = *(*(m + 1) + 1)
+            *(*(m + 1) + 2) -> acessa o terceiro elemento do segundo vetor. = m[1][2]
+
+            int m[linha L][coluna C];
+
+            *m -- **m -- *(*m + C) -- *(m[L] + C) -- *(*(m + L) + C)
+
+            Template geral: m[L][C] == *(*(m + L) + C)
+        
+        Acesso aos elementros da matriz:
+
+            Pode ser acessado tanto com a aritmética dos ponteiros como com os operadores [][]
+
+            int m[3][3]
+
+                      0        1        2
+                0  m[0][0]  m[0][1]  m[0][2]
+
+                1  m[1][0]  m[1][1]  m[1][2]
+
+                2  m[2][0]  m[2][1]  m[2][2]
+        
+        Alteração de elementos de uma matriz:
+
+            I. Declarar e alterar todos os elementos
+                int m[2][2] = { {1, 2}, {3, 4} }; sem os colchetes dos vetores também é válido;
+            II. Usando colchetes
+                m[0][0] = 123;
+            III. Usando aritmética de ponteiros
+                *(*(m + 1) + 2) = 789;
+            IV. Ler usando colchetes
+                scanf("%d", &m[0][2]);
+            V. Ler usando ponteiros
+                scanf("%d", *(m + 1) + 1);
+            VI. Declarar matriz preenchida com zeros
+                int m[4][3] = {};
