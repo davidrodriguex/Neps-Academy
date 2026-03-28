@@ -134,3 +134,87 @@
                 scanf("%d", *(m + 1) + 1);
             VI. Declarar matriz preenchida com zeros
                 int m[4][3] = {};
+
+3. Caracteres
+
+    São símbolos tipográficos utilizados em textos, declarado no tipo char.
+    char c; // variável c guarda um caractere e ocupa 1 byte.
+
+    Mesmo armazenando caracteres, ele guarda um valor inteiro e a linguagem C utiliza a tabela ASCII para saber qual caractere é representado por um inteiro.
+
+    Especificando e atribuindo:
+
+        char c = 'A'; ou char c = 65; - ambos estão atribundo a c o caractere A.
+
+    Entrada e saída de caracteres:
+
+        char c;
+        scanf("%c", &c);
+        printf("%c %d", c, c);
+
+        %c - recebe o caracetere ou um valor em ASCII;
+        %d - imprime o valor associado ao caractere da ASCII.
+
+        Comandos get/put - char:
+
+            char c;
+
+            c = getchar(); // recebe o valor do caractere digitado pelo usuário
+            putchar(c); // imprime o valor de c
+
+            getchar() apenas aceita o caractere e não seu valor em ASCII.
+    
+    Conversão entre maiúsculas e minúsculas:
+
+        #include <ctype.h> // importa da biblioteca o toupper() e tolower(), elas recebem o valor char ou seu respectivo valor em ASCII.
+
+        char letra;
+
+        letra = getchar()
+
+        printf("Maiúscula: %c\n", toupper(letra));
+        printf("Minúscula: %c\n", tolower(letra));
+
+4. Strings
+
+    São cadeias de caracteres que para armazenar em C utiliza-se vetor de caracteres.
+    char nome[15]; // vetor "nome" de 15 caracteres.
+
+    Uma string termina em \0.
+
+    Tratamento e manipulação de strings
+
+        #include <string.h> //importando a biblioteca de funções para strings.
+        Principais funções:
+
+        - strlen: retorna quantos caracteres existem entre a pos recebida e \0, ou seja, o tamanho da string;
+
+        - strcpy: recebe duas posições de memórias e atribui a segunda string para a primeira, copiando uma string a outra.
+            char a[10] = "abcd";
+            char b[10];
+
+            strcpy(b,a); // b recebe a
+
+        - strcmp: recebe duas posições de memória e compara lexicograficamente as strings(a-z).
+            char n1[20];
+            char n2[20];
+
+            scanf("%s %s", n1, n2);
+
+            if(strcmp(n1, n2) == 0){
+                string iguais
+            }
+            if(strcmp(n1, n2) == -1){
+                primeira menor
+            }
+            if(strcmp(n1, n2) == 1){
+                segunda menor
+            }
+
+        - strcat: concatenação de strings;
+
+        -strstr: retorna a primeira posição de memória da primeira que contém a segunda, a função procura uma substring dentro de outra string e retorna o endereço da primeira ocorrência, senão encontrada, retorna NULL.
+            char nome[50] = "academy";
+            printf("%s", strstr(nome, "de")); // imprime "demy"
+
+            Se trocar o segundo parâmetro para 'c', vai imprimir "cademy".
