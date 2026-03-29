@@ -1,29 +1,42 @@
 #include <stdio.h>
 
 int main() {
-    char str[100];
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
+    // Entrada de uma string (sem espaços).
+    char S[50];
+    scanf("%s", S);
 
+    // Declarando variáveis para armazenar o comprimento da string, as vogais e as consoantes.
     int length = 0;
-    int vowels = 0;
-    int consonants = 0;
+    int vowels[50] = {};
+    int consonants[50] = {};
 
-    for (int i = 0; str[i] != '\0'; i++) {
-        char ch = str[i];
-        if (ch >= 'a' && ch <= 'z') {
-            length++;
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                vowels++;
+    // Analisando cada caractere da string para identificar vogais e consoantes.
+    for (int i = 0; S[i] != '\0'; i++) {
+
+        char ch = S[i];
+
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowels[length] = ch;
+                length++;
             } else {
-                consonants++;
+                consonants[length] = ch;
+                length++;
             }
         }
+    
+    // Imprimindo as vogais e consoantes encontradas na string.
+    printf("Vogais: ");
+    for (int i = 0; i < length; i++) {
+        printf("%c", vowels[i]);
     }
 
-    printf("Length of the string: %d\n", length);
-    printf("Number of vowels: %d\n", vowels);
-    printf("Number of consonants: %d\n", consonants);
+    printf("\n");
+
+    printf("Consoantes: ");
+    for (int i = 0; i < length; i++) {
+        printf("%c", consonants[i]);
+    }
+    printf("\n");
 
     return 0;
 }
