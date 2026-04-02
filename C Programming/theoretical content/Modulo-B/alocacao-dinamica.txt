@@ -49,3 +49,23 @@ Todo estudo anterior foi baseado em alocação de memória estática do PC, ou s
 
             int *p = (int*) malloc(sizeof(int)*10); // ponteiro pra int para receber 10 inteiros
             free(p); // para quando ñ quiser mais utilizar esses 10 inteiros
+        
+    -> Função Calloc
+
+        Mesma coisa do Malloc, mas solicita um número específico de itens de um determinado tamanho em bytes.
+
+        Declaração: void* calloc(size_t num, size_t size);
+
+            calloc(4, sizeof(int));
+            // Aloca memória para 4 itens que ocupam cada um o espaço de um inteiro.
+
+        Os itens especificados serão preenchidos com o valor 0 e retornará um ponteiro para a primeira posição de memória
+
+        A função free pode ser utilizada para liberar a memória da mesma forma que no malloc.
+
+        Recomenda-se a utilização de calloc para a criação de vetores por ser mais intuitivo e facilitar o entendimento do código.
+
+            int *p = calloc(9, sizeof(int));
+            // Cria um vetor de 9 posições de 4 bytes cada uma, todas preenchidas com 0.
+
+    -> Função Realloc
