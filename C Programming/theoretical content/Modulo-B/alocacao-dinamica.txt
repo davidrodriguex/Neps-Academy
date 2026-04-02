@@ -69,3 +69,31 @@ Todo estudo anterior foi baseado em alocação de memória estática do PC, ou s
             // Cria um vetor de 9 posições de 4 bytes cada uma, todas preenchidas com 0.
 
     -> Função Realloc
+
+        Realocar o tamanho de espaço da memória anteriormente alocada.
+
+        Declaração: void* realloc(void* ptr, size_t size);
+            // void* - nome do ponteiro que fora criado;
+            // size_t size - novo espaço de memória.
+
+            int *p = (int*)malloc(sizeof(int)*2);
+            p = (int*)realloc(p, sizeof(int)*5);
+            // antes tinham dois espaços, agora tem 5.
+
+            p = (int*)realloc(p, sizeof(int)*2);
+            // retorna a ter 2 espaços novamente.
+
+        É possível que a função mova o bloco para outro endereço, para que a realocação seja possível, visto que a região anterior pode não ter espaço contínuo suficiente.
+
+        Caso a realocação não seja possível, a função retorna um ponteiro nulo, mas não desaloca o bloco. Uma boa prática é utilizar um ponteiro auxiliar para receber a realocação e só atribuir o endereço ao ponteiro original caso não retorne NULL.
+
+            int *p = malloc(4);
+            int *aux = realloc(p, 2);
+
+            if(aux != NULL){
+                p = aux;
+            }
+
+        Casting de dados também é utilizado aqui, assim como no malloc e calloc, em função do retorno do ponteiro ser do tipo void.
+
+        
