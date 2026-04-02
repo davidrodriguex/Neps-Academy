@@ -1,0 +1,36 @@
+============================
+     ALOCAÇÃO DINÂMICA
+       DE MEMÓRIA
+============================
+
+Todo estudo anterior foi baseado em alocação de memória estática do PC, ou seja, espaço definido antes da execução do programa. 
+
+1. Alocação Dinâmica
+
+    Pode ser solicitado espaços de memória durante a execução do programa, o que é conhecida como alocação dinâmica.
+
+    -> Biblioteca utilizada: <stdlib.h> -- Funções principais: malloc e free
+
+    -> Função Malloc
+
+        Declaração: void *malloc(size_t size)  
+
+        Funão espera receber uma qtd. de bytes para alocação, se alocar a quantidade, a função retorna a posição de memória referente a primeira posição alocada, caso contrário a função retorna um ponteiro nulo.
+
+            malloc(4) // aloca 4 bytes
+        
+        Para utilizar a memória solicitada, precisa de um ponteiro.
+
+            int *p;
+            p = malloc(4) // p aponta para a primeira posição
+
+        Definindo tamanho do Malloc:
+
+            p = malloc(sizeof(int))   // aloca espaço de um inteiro (4B)
+            p = malloc(sizeof(int)*2) // aloca espaço de dois inteiros (8B)
+            p = malloc(sizeof(char)*10) // aloca espaço de 10 caracteres (10B)
+            p = malloc(sizeof(int)*n) // aloca espaço de n inteiros ('n'B)
+
+        Retorno do Malloc:
+
+            
