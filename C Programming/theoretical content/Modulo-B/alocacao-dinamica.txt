@@ -13,9 +13,9 @@ Todo estudo anterior foi baseado em alocação de memória estática do PC, ou s
 
     -> Função Malloc
 
-        Declaração: void *malloc(size_t size)  
+        Declaração: void* malloc(size_t size)  
 
-        Funão espera receber uma qtd. de bytes para alocação, se alocar a quantidade, a função retorna a posição de memória referente a primeira posição alocada, caso contrário a função retorna um ponteiro nulo.
+        Funcão espera receber uma qtd. de bytes para alocação, se alocar a quantidade, a função retorna a posição de memória referente a primeira posição alocada, caso contrário a função retorna um ponteiro nulo.
 
             malloc(4) // aloca 4 bytes
         
@@ -24,7 +24,7 @@ Todo estudo anterior foi baseado em alocação de memória estática do PC, ou s
             int *p;
             p = malloc(4) // p aponta para a primeira posição
 
-        Definindo tamanho do Malloc:
+        DEfinição de tamanho do Malloc:
 
             p = malloc(sizeof(int))   // aloca espaço de um inteiro (4B)
             p = malloc(sizeof(int)*2) // aloca espaço de dois inteiros (8B)
@@ -33,4 +33,19 @@ Todo estudo anterior foi baseado em alocação de memória estática do PC, ou s
 
         Retorno do Malloc:
 
-            
+           A função retorna a primeira posição de memória. 
+           Foi definido para essa função retornar um ponteiro para void (void*).
+           Gera erro de compilação ao tentar atribuir um ponteiro para void para outro ponteiro, sendo necessário utilizar o cast de dados.
+
+           Cast de Dados: simboliza ao pc converter um tipo de dado em outro.
+
+                p = (int*)malloc(sizeof(int)*5) // o que esta dentro de malloc será convertido para o tipo definido antes.
+        
+    -> Função Free
+
+        Declaração: void free(void *ptr)
+
+        Para quando ñ quiser mais utilizar determinada posição de memória, a função vai desalocar toda a região alocada dinamicamente que inicia na posição fornecida.
+
+            int *p = (int*) malloc(sizeof(int)*10); // ponteiro pra int para receber 10 inteiros
+            free(p); // para quando ñ quiser mais utilizar esses 10 inteiros
