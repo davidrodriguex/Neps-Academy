@@ -1,0 +1,32 @@
+================================
+    MANIPULACAO DE ARQUIVOS    
+================================
+
+A liguagem C possui suporte à manipulaçao de arquivos com a biblioteca stdio.h
+Dois tipos de arquivos: texto e binário
+
+1. Ponteiro de arquivo
+
+    Para abrir um arquivo, antes é preciso atribuir a pos de memória do arquivo para um ponteiro de arquivo.
+    Ponteiros para arq. são do tipo FILE: FILE *p;
+
+    1.1. Função fopen (abertura de arquivos)
+
+        FILE *fopen(const char *filename, const char *mode)
+
+        A função recebe dois parâmetros:
+            const char *filename = caminho para um arquivo
+            const char *mode = modo de abertura
+        
+        Retorna: ponteiro para arq. aberto ou nulo, caso erro.
+
+        FILE *a = fopen("nome.txt", "r");
+
+        Parâmetro Nome: arquivo.txt | ../arquivo.txt | pasta/arquivo.txt | ../pasta/arquivo.txt
+        Parâmetro Modo de Abertura: especifica qual o objetivo da abertura do arquivo.
+
+            "r" - reading -- apenas abre o arquivo, caso não exista, retorna NULL;
+            "w" - writing -- caso o arquivo exista, ele abre, caso não, ele cria e depois abre. Se ambos os casos derem errado, retorna NULL.
+            "a" - attach
+        
+        Para fechar o arquivo: fclose( a ); indicando o ponteiro criado e aberto.
