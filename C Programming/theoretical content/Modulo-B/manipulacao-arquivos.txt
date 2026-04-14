@@ -26,7 +26,72 @@ Dois tipos de arquivos: texto e binário
         Parâmetro Modo de Abertura: especifica qual o objetivo da abertura do arquivo.
 
             "r" - reading -- apenas abre o arquivo, caso não exista, retorna NULL;
-            "w" - writing -- caso o arquivo exista, ele abre, caso não, ele cria e depois abre. Se ambos os casos derem errado, retorna NULL.
-            "a" - attach
+            "w" - writing -- caso o arquivo exista, ele abre, caso não, ele cria e depois abre. Se ambos os casos derem errado, retorna NULL;
+            "a" - attach -- anexa ao final do arquivo.
         
         Para fechar o arquivo: fclose( a ); indicando o ponteiro criado e aberto.
+
+2. Escrita em arquivos
+
+    Existem funções específicas que recebem como parâmetros qual o fluxo que a informação deve seguir, mudando a saída padrão e podendo direcionar o fluxo para algum arquivo.
+
+    2.1. Função fputc (escreve um caractere no arquivo)
+
+        int fpuntc(const char caractere, FILE *fluxo)
+            fpuntc('x', arquivo);
+        
+        Escreve o caractere na pos onde o ponteiro está apontando no arquivo e incrementa o ponteiro para a próxima posição.
+
+        Se sucesso: retorna o valor inteiro do caractere escrito.
+        Se falha: retorna EOF(-1)
+
+    2.2. Função fputs (escreve uma string no arquivo)
+
+        int fputs(const char *caractere, FILE *fluxo)
+            fputs("Neps", arquivo);
+
+        Incrementa o ponteiro a qtd. de pos igual ao tamanho da string.
+        Neps = 4 caracteres = 4 posições
+
+        Se sucesso: retorna um valor ñ negativo
+        Se falha: retorna EOF(-1)
+    
+    2.3. Função fprintf
+
+        int fprintf(FILE *fluxo, const char *formato, ...)
+            fprintf(arquivo, "Nome = %s", "Neps");
+
+        Se sucesso: retorna o valor igual a qtd de carac. escritos.
+        Se falha: retorna EOF(-1)
+
+3. Leitura de arquivos
+
+    Mesma forma da escrita, existem funções específicas quw recebem como parâmetro de qual fluxo que a informação deve ser lida.
+
+    3.1. Função fgetc (ler um caractere de um arquivo)
+
+        int fgetc(FLUXO *fluxo)
+        char c = fgetc(arquivo);
+
+        Retorna o valor inteiro no caractere lido ou retorna o EOF.
+
+    3.2. Função fgets (ler uma string)
+
+        char *fgets(char *str, int tamanho max, FILE *fluxo)
+              fgets(p, 10, arquivo) // vai ler do arq., no max, 10 pos que será fornecida ao ponteiro p.
+
+        Retorna o endereço do ponteiro fornecido, caso erro, retorna ponteiro nulo.
+    
+    3.3. Função fscanf(ler string com formatação do arquivo)
+
+        int fscanf(FILE *fluxo, const char *formato, ...)
+        int a, b;
+        fscanf(arquivo, "%d %d", &a, &b);
+
+        Retorna o valor igual a qtd. de valores lidos corretamente, se erro, retorna EOF.
+    
+    3.4. Função feof (verifica se ainda existe algo escrito no arquivo)
+
+        int feof(FILE *fluxo)
+
+        Retorna um valor diferente de zero se o final do arquivo for alcançado, e zero caso contrário
